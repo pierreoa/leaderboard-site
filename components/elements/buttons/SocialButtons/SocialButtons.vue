@@ -1,7 +1,14 @@
+<script setup lang="ts">
+const props = defineProps<{
+  // TODO: someone come back and type
+  socials: any[];
+}>();
+</script>
+
 <template>
   <div class="social-buttons">
     <a
-      v-for="social in socials"
+      v-for="social in props.socials"
       :key="social.name"
       class="social-button"
       :alt="social.name"
@@ -11,20 +18,6 @@
     </a>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
-
-export default defineComponent({
-  name: 'SocialButtons',
-  props: {
-    socials: {
-      required: true,
-      type: Array,
-    },
-  },
-});
-</script>
 
 <style lang="postcss" scoped>
 .social-buttons {

@@ -1,3 +1,7 @@
+<script setup lang="ts">
+// I think it's best to leave an empty script than omit it :)
+</script>
+
 <template>
   <div class="modal">
     <div class="modal__wrapper">
@@ -15,14 +19,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from '@vue/composition-api';
-
-export default defineComponent({
-  name: 'Modal',
-});
-</script>
 
 <style lang="postcss" scoped>
 .modal {

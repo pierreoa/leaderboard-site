@@ -1,10 +1,12 @@
 {
+  "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "module": "ESNext",
     "moduleResolution": "Node",
     // Targeting down to ES2015/ ES6 to ensure as wide coverage as possible
     // while still having microTasks/ promises to allow true Asynchronicity
     "target": "ES2015",
+    "jsx": "preserve", // Needed for Volar to work properly.
 
     "strict": true,
     "pretty": true,

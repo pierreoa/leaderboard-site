@@ -50,6 +50,7 @@
     "semi": "off",
     "comma-dangle": "off",
     "space-before-function-paren": "off",
+    "func-call-spacing": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "vue/multi-word-component-names": "off",
     "vue/singleline-html-element-content-newline": "off",

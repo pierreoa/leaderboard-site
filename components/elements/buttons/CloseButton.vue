@@ -1,20 +1,12 @@
+<script setup lang="ts">
+// I think it's best to leave an empty script than omit it :)
+</script>
+
 <template>
-  <BaseButton class="close-button" v-bind="$attrs" v-on="$listeners">
+  <BaseButton class="close-button" v-bind="$attrs">
     <svg-icon class="w-5 h-5" name="close" />
   </BaseButton>
 </template>
-
-<script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
-import BaseButton from '@/components/elements/buttons/BaseButton.vue';
-
-export default defineComponent({
-  name: 'CloseButton',
-  components: {
-    BaseButton,
-  },
-});
-</script>
 
 <style lang="postcss" scoped>
 .close-button {

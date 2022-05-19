@@ -1,16 +1,12 @@
+<script setup lang="ts">
+// I think it's best to leave an empty script than omit it :)
+</script>
+
 <template>
-  <button class="button" v-bind="$attrs" v-on="$listeners">
+  <button class="button" v-bind="$attrs">
     <slot />
   </button>
 </template>
-
-<script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
-
-export default defineComponent({
-  name: 'BaseButton',
-});
-</script>
 
 <style lang="postcss" scoped>
 .button {

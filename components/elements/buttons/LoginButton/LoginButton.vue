@@ -1,20 +1,10 @@
-<template>
-  <BaseButton class="login-button" v-bind="$attrs" v-on="$listeners">
-    Log In
-  </BaseButton>
-</template>
-
-<script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
-import BaseButton from '@/components/elements/buttons/BaseButton.vue';
-
-export default defineComponent({
-  name: 'LoginButton',
-  components: {
-    BaseButton,
-  },
-});
+<script setup lang="ts">
+// I think it's best to leave an empty script than omit it :)
 </script>
+
+<template>
+  <BaseButton class="login-button" v-bind="$attrs"> Log In </BaseButton>
+</template>
 
 <style lang="postcss" scoped>
 .login-button {

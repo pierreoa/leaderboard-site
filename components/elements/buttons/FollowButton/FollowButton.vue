@@ -1,27 +1,26 @@
+<script setup lang="ts">
+interface Props {
+  onClick: (payload: MouseEvent | KeyboardEvent) => void;
+}
+
+// for reference: https://vuejs.org/api/sfc-script-setup.html#typescript-only-features
+const props = withDefaults(defineProps<Props>(), {
+  onClick: (payload: MouseEvent | KeyboardEvent) =>
+    // eslint-disable-next-line no-console
+    console.log('follow', payload),
+});
+</script>
+
 <template>
   <button
     class="follow-button"
     v-bind="$attrs"
-    v-on="$listeners"
-    @click="onClick"
-    @keyup.enter="onClick"
+    @click="props.onClick"
+    @keyup.enter="props.onClick"
   >
     Follow
   </button>
 </template>
-
-<script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
-
-export default defineComponent({
-  props: {
-    onClick: {
-      default: () => console.log('follow'), // eslint-disable-line no-console
-      type: Function,
-    },
-  },
-});
-</script>
 
 <style lang="postcss" scoped>
 .follow-button {

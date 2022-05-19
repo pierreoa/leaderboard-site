@@ -1,16 +1,12 @@
+<script setup lang="ts">
+// I think it's best to leave an empty script than omit it :)
+</script>
+
 <template>
-  <div class="card-body" v-bind="$attrs" v-on="$listeners">
+  <div class="card-body" v-bind="$attrs">
     <slot />
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
-
-export default defineComponent({
-  name: 'CardBody',
-});
-</script>
 
 <style lang="postcss" scoped>
 .card-body {

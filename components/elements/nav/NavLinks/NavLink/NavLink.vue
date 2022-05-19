@@ -1,20 +1,13 @@
+<script setup lang="ts">
+// I think it's best to leave an empty script than omit it :)
+</script>
+
 <template>
-  <ButtonLink class="nav-link" v-bind="$attrs" v-on="$listeners">
+  <!-- https://v3-migration.vuejs.org/breaking-changes/listeners-removed.html#listeners-removed -->
+  <ButtonLink class="nav-link" v-bind="$attrs">
     <slot />
   </ButtonLink>
 </template>
-
-<script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
-import ButtonLink from '@/components/elements/buttons/ButtonLink/ButtonLink.vue';
-
-export default defineComponent({
-  name: 'NavLink',
-  components: {
-    ButtonLink,
-  },
-});
-</script>
 
 <style lang="postcss" scoped>
 .nav-link {

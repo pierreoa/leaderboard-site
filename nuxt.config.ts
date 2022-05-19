@@ -1,9 +1,9 @@
-import { NuxtConfig } from '@nuxt/types';
 import { config as dotenv } from 'dotenv-safe';
+import { defineNuxtConfig } from 'nuxt';
 
 dotenv();
 
-export default {
+export default defineNuxtConfig({
   // Auth module configuration https://auth.nuxtjs.org/
   auth: {
     strategies: {
@@ -41,19 +41,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
-    // https://tailwindcss.com
-    '@nuxtjs/tailwindcss',
-    // https://composition-api.nuxtjs.org
-    '@nuxtjs/composition-api/module',
-  ],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/css/tailwind.css'],
@@ -97,6 +84,10 @@ export default {
     '@nuxtjs/auth-next',
     '@nuxtjs/i18n',
     '@nuxtjs/svg-sprite',
+    // https://go.nuxtjs.dev/typescript
+    '@nuxt/typescript-build',
+    // https://tailwindcss.com
+    '@nuxtjs/tailwindcss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -117,4 +108,4 @@ export default {
   svgSprite: {
     // manipulate module options
   },
-} as NuxtConfig;
+});

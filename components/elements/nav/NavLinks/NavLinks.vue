@@ -1,36 +1,39 @@
+<script setup lang="ts">
+interface NavLinks {
+  name: string;
+  to: string;
+}
+
+interface Props {
+  navLinks: NavLinks[];
+}
+
+// for reference: https://vuejs.org/api/sfc-script-setup.html#typescript-only-features
+const props = withDefaults(defineProps<Props>(), {
+  navLinks: () => [
+    {
+      name: 'Games',
+      to: '#',
+    },
+    {
+      name: 'About',
+      to: '#',
+    },
+  ],
+});
+</script>
+
 <template>
   <nav class="nav-link-container">
-    <NavLink v-for="navLink in navLinks" v-bind="navLink" :key="navLink.name">
+    <NavLink
+      v-for="navLink in props.navLinks"
+      v-bind="navLink"
+      :key="navLink.name"
+    >
       {{ navLink.name }}
     </NavLink>
   </nav>
 </template>
-
-<script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
-import NavLink from '@/components/elements/nav/NavLinks/NavLink/NavLink.vue';
-
-export default defineComponent({
-  components: {
-    NavLink,
-  },
-  props: {
-    navLinks: {
-      default: () => [
-        {
-          name: 'Games',
-          to: '#',
-        },
-        {
-          name: 'About',
-          to: '#',
-        },
-      ],
-      type: Array,
-    },
-  },
-});
-</script>
 
 <style lang="postcss" scoped>
 .nav-link-container {

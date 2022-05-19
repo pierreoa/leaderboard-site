@@ -1,34 +1,25 @@
-<template>
-  <input v-model="model" class="input" />
-</template>
+<script setup lang="ts">
+import { computed } from 'vue';
 
-<script lang="ts">
-import { computed, defineComponent } from '@vue/composition-api';
+const props = defineProps<{
+  value: [string, number];
+}>();
 
-export default defineComponent({
-  name: 'BaseInput',
-  props: {
-    value: {
-      type: [String, Number],
-      default: '',
-    },
+const emit = defineEmits<{ (e: 'input', value: any): void }>();
+
+const model = computed({
+  get(): any {
+    return props.value;
   },
-  setup(props, { emit }) {
-    const model = computed({
-      get(): any {
-        return props.value;
-      },
-      set(value: any): void {
-        emit('input', value);
-      },
-    });
-
-    return {
-      model,
-    };
+  set(value: any): void {
+    emit('input', value);
   },
 });
 </script>
+
+<template>
+  <input v-model="model" class="input" />
+</template>
 
 <style lang="postcss" scoped>
 .input {

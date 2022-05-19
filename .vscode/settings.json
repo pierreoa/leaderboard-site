@@ -1,10 +1,13 @@
 {
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "javascript.format.semicolons": "remove",
+  "typescript.format.semicolons": "remove",
   "editor.formatOnSave": true,
   "eslint.validate": ["javascript", "vue"],
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
+  "files.eol": "\n",
   "search.exclude": {
     "**/.github": true,
     "**/.husky": true,

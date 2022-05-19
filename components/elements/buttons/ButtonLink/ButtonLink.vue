@@ -1,30 +1,16 @@
+<script setup lang="ts">
+const props = defineProps<{
+  alt: string;
+  target: string;
+  url: string;
+}>();
+</script>
+
 <template>
-  <NuxtLink class="button-link" :to="url" v-bind="$attrs" v-on="$listeners">
+  <NuxtLink class="button-link" :to="props.url" v-bind="$attrs">
     <slot>Placeholder Link Text</slot>
   </NuxtLink>
 </template>
-
-<script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
-
-export default defineComponent({
-  name: 'ButtonLink',
-  props: {
-    alt: {
-      type: String,
-      default: '',
-    },
-    target: {
-      type: String,
-      default: '',
-    },
-    url: {
-      type: String,
-      default: '',
-    },
-  },
-});
-</script>
 
 <style lang="postcss" scoped>
 .button-link {

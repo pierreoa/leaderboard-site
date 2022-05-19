@@ -1,3 +1,19 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const emit = defineEmits<{ (e: 'search', value: string): void }>();
+
+const inputValue = ref('');
+
+const onClick = () => {
+  emit('search', inputValue.value);
+};
+
+const onEnter = () => {
+  emit('search', inputValue.value);
+};
+</script>
+
 <template>
   <div class="search-bar">
     <input
@@ -12,31 +28,6 @@
     </button>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent, ref } from '@nuxtjs/composition-api';
-
-export default defineComponent({
-  name: 'SearchBar',
-  setup(_, { emit }) {
-    const inputValue = ref('');
-
-    const onClick = () => {
-      emit('search', inputValue.value);
-    };
-
-    const onEnter = () => {
-      emit('search', inputValue.value);
-    };
-
-    return {
-      inputValue,
-      onClick,
-      onEnter,
-    };
-  },
-});
-</script>
 
 <style lang="postcss" scoped>
 .search-bar {
