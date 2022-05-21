@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts">
 import {
   defineComponent,
   reactive,
@@ -60,7 +60,7 @@ export default defineComponent({
     };
   },
 });
-</script>
+</scrip>
 
 <template>
   <Card id="loginCard" data-testid="login-card" class="login-card">
